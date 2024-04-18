@@ -19,6 +19,9 @@
       <li class="md:mr-12"><a href="/prodact">prodact</a></li>
       <li class="md:mr-12"><a href="/kontak">contact</a></li>
       <li class="md:mr-12"><a href="/Gallery">gallery</a></li>
+      <div class="flex justify-center mt-4">
+      <button class="bg-blue-500 text-white py-2 px-4 rounded"><a href="/login">Login</a></button>
+</div>
     </ul>
   </nav>
 </header>

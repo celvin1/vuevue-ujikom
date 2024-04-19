@@ -1,6 +1,6 @@
 import { createStore } from 'vuex';
 import auth from './modules/auth';
-
+import datauser from './modules/profile';
 
 const store = createStore({
   state: {
@@ -8,6 +8,7 @@ const store = createStore({
   },
   modules: {
     auth,
+    datauser,
     
   },
 });

@@ -121,7 +121,7 @@
         </tr>
 
         <tr class="">
-          <td width="50%" class="whitespace-no-wrap py-4 text-sm font-bold text-gray-900 sm:px-6">
+          <td width="50%" cass="whitespace-no-wrap py-4 text-sm font-bold text-gray-900 sm:px-6">
             Basic Plan - Oct 2021
             <div class="mt-1 lg:hidden">
               <p class="font-normal text-gray-500">15 October, 2021</p>

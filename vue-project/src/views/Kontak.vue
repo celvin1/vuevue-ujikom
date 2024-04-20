@@ -18,7 +18,6 @@
       <li class="md:mr-12"><a href="/home">home</a></li>
       <li class="md:mr-12"><a href="/prodact">prodact</a></li>
       <li class="md:mr-12"><a href="/kontak">contact</a></li>
-      <li class="md:mr-12"><a href="/gallery">gallery</a></li>
       <button class="bg-blue-500 text-white py-2 px-4 rounded"><a href="/login">Login</a></button>
     </ul>
   </nav>

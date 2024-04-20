@@ -176,16 +176,6 @@
           </tbody>
 
         </table>
-        <div class="flex flex-col items-center border-t bg-white px-5 py-5 sm:flex-row sm:justify-between">
-          <span class="text-xs text-gray-600 sm:text-sm"> Showing {{ startIndex + 1 }} to {{ Math.min(endIndex,
-            getDataUser.length) }} of {{ getDataUser.length }} Entries </span>
-          <div class="flex items-center mt-4 sm:mt-0">
-            <button @click="previousPage" :disabled="currentPage === 1"
-              class="px-3 py-1 rounded text-sm mr-2 bg-gray-200">Previous</button>
-            <button @click="nextPage" :disabled="endIndex >= getDataUser.length || paginatedData.length < itemsPerPage"
-              class="px-3 py-1 rounded text-sm bg-gray-200">Next</button>
-          </div>
-        </div>
       </div>
     </div>
   </div>

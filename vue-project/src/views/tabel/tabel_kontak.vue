@@ -44,6 +44,7 @@
                                             Delete
                                         </button>
                                     </div>
+                                    
                                 </p>
                             </td>
                         </tr>
@@ -55,6 +56,7 @@
 </template>
 
 <script>
+import Swal from 'sweetalert2';
 import kontak from '@/store/modules/kontak';
 import { mapGetters, mapActions } from 'vuex';
 
@@ -77,10 +79,32 @@ export default {
         },
         async onDelete(Kontak) {
             try {
-                await this.deleteKontak(Kontak.id);
-                await this.fetchDataKontak();
+                const confirmed = await Swal.fire({
+                    title: 'apakah kamu yakin?',
+                    text: "tekan y data akan menghilang",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, delete it!'
+                });
+
+                if (confirmed.isConfirmed) {
+                    await this.deleteKontak(Kontak.id);
+                    await this.fetchDataKontak();
+                    Swal.fire(
+                        'Deleted!',
+                        'Your contact has been deleted.',
+                        'success'
+                    );
+                }
             } catch (error) {
                 console.error('Error deleting kontak:', error);
+                Swal.fire(
+                    'Error!',
+                    'An error occurred while deleting the contact.',
+                    'error'
+                );
             }
         }
     },

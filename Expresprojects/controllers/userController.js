@@ -1,6 +1,8 @@
 const db = require("../database/models");
 const User = db.User;
 const bcrypt = require("bcryptjs");
+const jwt = require('jsonwebtoken');
+
 
 // CREATE: untuk enambahkan data kedalam tabel user
 exports.create = (req, res) => {
@@ -110,16 +112,37 @@ exports.delete = (req, res) => {
 };
 
 // BONUS ===> Mengambil data sesuai id yang dikirimkan
-exports.findOne = (req, res) => {
-    User.findByPk(req.params.id).then((user) => {
-        res.json({
-            message: "user retrieved successfully.",
+exports.me = async (req, res) => {
+    let token = req.headers.authorization;
+
+    if (!token) {
+        return res.status(400).json({
+            message: "Token Not Found.",
+        });
+    }
+
+    try {
+        token = token.split(" ")[1];
+        
+        const verify = jwt.verify(token, process.env.JWT_KEY_SECRET);
+
+        const user = await User.findByPk(verify.id);
+
+        if (!user) {
+            return res.status(404).json({
+                message: "User not found.",
+            });
+        }
+
+        return res.json({
+            message: "User retrieved successfully.",
             data: user,
         });
-    }).catch((err) => {
-        res.status(500).json({
+    } catch (err) {
+        return res.status(500).json({
             message: err.message || "Some error occurred while retrieving user.",
             data: null,
         });
-    });
+    }
+    
 };

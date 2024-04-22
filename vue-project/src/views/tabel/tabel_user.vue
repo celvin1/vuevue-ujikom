@@ -192,220 +192,40 @@
   </template>
   
   <script>
-  import { mapActions, mapGetters } from 'vuex';
-  import Swal from 'sweetalert2'; // Import Swal from sweetalert2
-  
-  export default {
-    data() {
-      return {
-        searchQuery: '',
-        currentPage: 1,
-        itemsPerPage: 5,
-        newUser: {
-          name: '',
-          email: '',
-          password: '',
-          confirmPassword: '',
-          role: 'member'
-        },
-        editedUser: {},
-        errorMessage: ''
-      };
-    },
-    computed: {
-      ...mapGetters('datauser', ['getDataUser']),
-      // Menghitung indeks awal dan akhir untuk pagination
-      startIndex() {
-        return (this.currentPage - 1) * this.itemsPerPage;
+import axios from 'axios';
+
+export default {
+  data() {
+    return {
+      users: [],
+      newUser: {
+        name: '',
+        email: '',
+        password: '',
       },
-      endIndex() {
-        return this.currentPage * this.itemsPerPage;
-      },
-      // Data yang akan ditampilkan pada halaman saat ini
-      paginatedData() {
-        // Jika ada pencarian, gunakan data yang difilter
-        if (this.searchQuery) {
-          return this.searchUser();
-        }
-        // Jika tidak, gunakan data asli
-        return this.getDataUser.slice(this.startIndex, this.endIndex);
-      },
-    },
-    methods: {
-      ...mapActions('datauser', ['fetchDataUser', 'postUserData', 'deleteUserData', 'editUserData']), // Tambahkan action postUserData ke mapActions
-      previousPage() {
-        if (this.currentPage > 1) {
-          this.currentPage--;
-        }
-      },
-      editUser(userId) {
-        // Temukan pengguna yang akan diedit berdasarkan ID
-        this.editedUser = this.getDataUser.find(user => user.id === userId);
-        // Tampilkan modal edit
-        document.getElementById('edit-modal').classList.remove('hidden');
-      },
-      nextPage() {
-        if (this.endIndex < this.getDataUser.length) {
-          this.currentPage++;
-        }
-      },
-      openModal() {
-        // Tampilkan modal
-        document.getElementById('crud-modal').classList.remove('hidden');
-        // Atur fokus pada elemen modal jika diperlukan
-        // document.getElementById('crud-modal').focus();
-      },
-      closeModal() {
-        // Tutup modal tambah pengguna
-        document.getElementById('crud-modal').classList.add('hidden');
-        // Reset nilai input pengguna baru setelah menutup modal
-        this.newUser = {
-          name: '',
-          email: '',
-          password: '',
-          confirmPassword: '',
-          role: 'member'
-        };
-        
-        // Reset pesan kesalahan
-        this.errorMessage = '';
-      },
-      closeEditModal() {
-        // Tutup modal edit
-        document.getElementById('edit-modal').classList.add('hidden');
-        // Reset nilai editedUser setelah menutup modal
-        this.editedUser = {};
-      },
-      searchUser() {
-        const query = this.searchQuery.toLowerCase();
-        return this.getDataUser.filter(user =>
-          user.name.toLowerCase().includes(query) ||
-          user.email.toLowerCase().includes(query)
-        );
-      },
-      async addUser() {
-        // Lakukan validasi input pengguna sebelum mengirim permintaan POST
-        if (this.validateUser()) {
-          try {
-            // Tampilkan konfirmasi sebelum menambah pengguna
-            const result = await Swal.fire({
-              title: "Do you want to save the changes?",
-              showDenyButton: true,
-              showCancelButton: true,
-              confirmButtonText: "Save",
-              denyButtonText: `Don't save`
-            });
-  
-            if (result.isConfirmed) {
-              // Panggil action postUserData dengan data pengguna baru
-              await this.postUserData(this.newUser);
-              // Tutup modal setelah berhasil menambah pengguna
-              this.closeModal();
-              // Tampilkan pesan sukses menggunakan Swal.fire
-              Swal.fire({
-                position: "top-end",
-                icon: "success",
-                title: "User added successfully",
-                showConfirmButton: false,
-                timer: 1500
-              });
-            } else if (result.isDenied) {
-              // Jika tidak menyimpan, reset nilai input pengguna baru
-              this.newUser = {
-                name: '',
-                email: '',
-                password: '',
-                confirmPassword: '',
-                role: 'member'
-              };
-              // Tutup modal
-              this.closeModal();
-            }
-          } catch (error) {
-            console.error('Error adding user:', error);
-            this.errorMessage = 'Failed to add user. Please try again.'; // Set pesan kesalahan jika terjadi kesalahan saat menambah pengguna
-          }
-        }
-      },
-      async updateUser() {
-    // Lakukan validasi input pengguna yang diubah sebelum mengirim permintaan PUT
-      try {
-        // Panggil action updateUserData dengan data pengguna yang diubah
-        await this.editUserData(this.editedUser);
-        // Tutup modal setelah berhasil mengubah pengguna
-        this.closeEditModal(); // Panggil closeEditModal di sini
-        // Tampilkan pesan sukses menggunakan Swal.fire
-        Swal.fire({
-          position: "top-end",
-          icon: "success",
-          title: "User updated successfully",
-          showConfirmButton: false,
-          timer: 1500
-        });
-      } catch (error) {
-        console.error('Error updating user:', error);
-        // Set pesan kesalahan jika terjadi kesalahan saat mengubah pengguna
-        this.errorMessage = 'Failed to update user. Please try again.';
-      }
+    };
   },
-  
-  
-  
-      async deleteUser(userId) {
-        try {
-          // Tampilkan konfirmasi sebelum menghapus pengguna
-          const result = await Swal.fire({
-            title: "Yakin Ingin Menghapus Data??",
-            text: "Anda Tidak Bisa Mengembalikan Datanya kembali!",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#3085d6",
-            cancelButtonColor: "#d33",
-            confirmButtonText: "Ya, Hapus!"
-          });
-  
-          if (result.isConfirmed) {
-            // Panggil action deleteUserData dengan id pengguna yang akan dihapus
-            await this.deleteUserData(userId);
-            // Tampilkan pesan sukses menggunakan Swal.fire
-            Swal.fire({
-              position: "top-end",
-              icon: "success",
-              title: "User deleted successfully",
-              showConfirmButton: false,
-              timer: 1500
-            });
-          }
-        } catch (error) {
-          console.error('Error deleting user:', error);
-          // Tampilkan pesan kesalahan jika terjadi kesalahan saat menghapus pengguna
-          Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: 'Failed to delete user. Please try again.',
-          });
-        }
-      },
-  
-      validateUser() {
-        // Lakukan validasi input pengguna di sini
-        if (!this.newUser.name || !this.newUser.email || !this.newUser.password || !this.newUser.confirmPassword) {
-          this.errorMessage = 'All fields are required.';
-          return false;
-        } else if (this.newUser.password !== this.newUser.confirmPassword) {
-          this.errorMessage = 'Passwords do not match.';
-          return false;
-        }
-        return true;
+  methods: {
+    async fetchUsers() {
+      try {
+        const response = await axios.get('http://localhost:3000/api/users');
+        this.users = response.data;
+      } catch (error) {
+        console.error('Error fetching users:', error);
       }
     },
-  
-    
-  
-    mounted() {
-      this.fetchDataUser().catch(error => {
-        console.error('Error fetching user data:', error);
-      });
+    async addUser() {
+      try {
+        await axios.post('http://localhost:3000/api/users', this.newUser);
+        this.newUser = { name: '', email: '', password: '' };
+        this.fetchUsers();
+      } catch (error) {
+        console.error('Error adding user:', error);
+      }
     },
-  };
-  </script>
+  },
+  mounted() {
+    this.fetchUsers();
+  },
+};
+</script>

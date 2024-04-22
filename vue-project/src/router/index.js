@@ -10,7 +10,24 @@ import admin from '../views/admin/dashboard.vue';
 import tabel from '../views/tabel/tabel_user.vue';
 import profile from '../views/admin/profile.vue';
 import kontak from '../views/tabel/tabel_kontak.vue';
+import produk from '../views/admin/produk.vue';
 
+function guardMyroute(to, from, next)
+{
+ var isAuthenticated= false;
+if(localStorage.getItem('token'))
+  isAuthenticated = true;
+ else
+  isAuthenticated= false;
+ if(isAuthenticated) 
+ {
+  next(); // allow to enter route
+ } 
+ else
+ {
+  next('/login'); // go to '/login';
+ }
+}
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -39,6 +56,7 @@ const router = createRouter({
       path: '/admin',
       name: 'LayoutAdmin',  
       component: LayoutAdmin,
+      beforeEnter: guardMyroute,
       children: [
         {
           path: '/admin',
@@ -60,11 +78,11 @@ const router = createRouter({
           name: 'AdminKontak',
           component: kontak,
         },
-        // {
-        //   path: '/admin/musik', 
-        //   name: 'Musik',
-        //   component: Musik
-        // },
+        {
+          path: '/admin/produk', 
+          name: 'produk',
+          component: produk,
+        },
         // {
         //   path: '/admin/profile',
         //   name: 'profile',

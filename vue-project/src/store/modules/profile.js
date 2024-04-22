@@ -4,15 +4,17 @@ const datauser = {
   namespaced: true,
   state: {
     dataUser: [],
+    currentUser: null,
   },
   getters: {
     getDataUser: (state) => state.dataUser,
+    getCurrentUser: (state) => state.currentUser,
   },
   actions: {
     async fetchDataUser({ commit }) {
       try {
-        const data = await axios.get("http://localhost:8080/api/v1/user/");
-        commit("SET_USERDATA", data.data['data']);
+        const response = await axios.get("http://localhost:8080/api/v1/user/");
+        commit("SET_USERDATA", response.data.data); // Memanggil mutation SET_USERDATA dengan data yang diterima dari server
       } catch (error) {
         alert(error);
         console.log(error);
@@ -37,7 +39,7 @@ const datauser = {
         alert(error);
         console.error(error);
         throw error; // Melemparkan error untuk menangani di luar action jika diperlukan
-      }
+      } 
     },
     async editUserData({ commit }, userData) {
       try {
@@ -50,11 +52,32 @@ const datauser = {
         throw error; // Melemparkan error untuk ditangani di luar action jika diperlukan
       }
     },
+    async fetchCurrentUser({ commit }) {
+      try {
+        const token = localStorage.getItem('token'); // Get token from localStorage
+        if (!token) {
+          throw new Error('Token not found');
+        }
+
+        const config = {
+          headers: {
+            'Authorization': `Bearer ${token}` // Set authorization header with token
+          }
+        };
+
+        const response = await axios.get("http://localhost:8080/api/v1/user/me", config); // Fetch user data using /me endpoint
+        commit("SET_CURRENT_USER", response.data.data); // Commit current user data to state
+      } catch (error) {
+        alert(error);
+        console.log(error);
+      }
+    },
+    
     // actions lainnya ...
   },
   mutations: {
-    SET_USERDATA(state, datauser) {
-      state.dataUser = datauser;
+    SET_USERDATA(state, dataUser) {
+      state.dataUser = dataUser;
     },
     ADD_USER(state, newUser) {
       state.dataUser.push(newUser); // Menambahkan user baru ke array dataUser di state
@@ -69,6 +92,9 @@ const datauser = {
         // Jika pengguna ditemukan, perbarui data pengguna di array dataUser
         state.dataUser.splice(index, 1, updatedUser);
       }
+    },
+    SET_CURRENT_USER(state, user) {
+      state.currentUser = user; // Set current user data in state
     },
     // mutations lainnya ...
   },

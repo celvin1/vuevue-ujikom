@@ -7,6 +7,6 @@ router.post('/api/v1/user/', userController.create);
 router.get('/api/v1/user/', userController.findAll);
 router.put('/api/v1/user/:id', userController.update);
 router.delete('/api/v1/user/:id', userController.delete);
-router.get('/api/v1/user/:id', userController.findOne);
+router.get('/api/v1/user/me', userController.me);
 
 module.exports = router;

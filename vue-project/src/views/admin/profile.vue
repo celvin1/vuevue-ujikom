@@ -8,8 +8,8 @@
       <ul class="mt-3 divide-y rounded bg-gray-100 py-2 px-3 text-gray-600 shadow-sm hover:text-gray-700 hover:shadow">
           <div class="flex ml-3 flex-col" v-if="user">
             <h3 class="font-medium">{{  user.name }}</h3>
-            <h3 class="font-medium">{{  }}</h3> 
-            <h3 class="font-medium">{{  }}</h3>
+            <h3 class="font-medium">{{ user.email }}</h3> 
+            <h3 class="font-medium">{{ user.role }}</h3>
           </div>
       </ul>
       <button @click="editProfile" class="mt-3 py-1 px-3 rounded text-sm bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-300 mx-auto block">Edit Profile</button>

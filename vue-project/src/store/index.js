@@ -13,6 +13,7 @@ const store = createStore({
     datauser,
     kontak,
     produk,
+    
   },
 });
 

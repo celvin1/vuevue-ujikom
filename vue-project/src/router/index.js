@@ -12,6 +12,7 @@ import profile from '../views/admin/profile.vue';
 import kontak from '../views/tabel/tabel_kontak.vue';
 import produk from '../views/admin/produk.vue';
 
+
 function guardMyroute(to, from, next)
 {
  var isAuthenticated= false;
@@ -83,7 +84,7 @@ const router = createRouter({
           name: 'produk',
           component: produk,
         },
-        // {
+        // // {
         //   path: '/admin/profile',
         //   name: 'profile',
         //   component: profile

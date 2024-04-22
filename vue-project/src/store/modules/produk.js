@@ -34,9 +34,18 @@ const produk = {
     },
     async createProduct({ commit }, productData) {
       try {
-        const response = await axios.post("http://localhost:8080/api/v1/produk", productData);
+        const response = await axios.post("http://localhost:8080/api/v1/produk/", productData);
         commit("ADD_PRODUCT", response.data);
         return response.data;
+      } catch (error) {
+        console.error(error);
+        throw error;
+      }
+    },
+    async deleteProduct({ commit }, productId) {
+      try {
+        await axios.delete(`http://localhost:8080/api/v1/produk/${productId}`);
+        commit("REMOVE_PRODUCT", productId);
       } catch (error) {
         console.error(error);
         throw error;
@@ -53,6 +62,9 @@ const produk = {
     },
     ADD_PRODUCT(state, newProduct) {
       state.products.push(newProduct);
+    },
+    REMOVE_PRODUCT(state, productId) {
+      state.products = state.products.filter(product => product.id !== productId);
     },
   },
 };

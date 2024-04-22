@@ -13,7 +13,6 @@
                 <th class="whitespace-normal py-4 text-sm font-medium text-gray-500 sm:px-6">Nama Produk</th>
                 <th class="whitespace-normal py-4 text-sm font-medium text-gray-500 sm:px-6">Deskripsi</th>
                 <th class="whitespace-normal py-4 text-sm font-medium text-gray-500 sm:px-6">Gambar</th>
-                <th class="whitespace-normal py-4 text-sm font-medium text-gray-500 sm:px-6">Status</th>
                 <th class="whitespace-normal py-4 text-sm font-medium text-gray-500 sm:px-6">Aksi</th> <!-- Tambahkan kolom untuk aksi -->
               </tr>
             </thead>
@@ -24,7 +23,6 @@
                 <td class="whitespace-no-wrap py-4 text-sm font-normal text-gray-500 sm:px-6">
                   <img :src="product.gambar" alt="Gambar Produk" class="h-16 w-16">
                 </td>
-                <td class="whitespace-no-wrap py-4 text-sm font-normal text-gray-500 sm:px-6">{{ product.status }}</td>
                 <td class="whitespace-no-wrap py-4 text-sm font-normal text-gray-500 sm:px-6">
                   <button @click="editProduct(product)" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2">Edit</button>
                   <button @click="deleteProduct(product.id)" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Hapus</button>

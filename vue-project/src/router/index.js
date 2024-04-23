@@ -3,31 +3,27 @@ import login from '../views/Login.vue'
 import home from '../views/HomeView.vue'
 import Kontak from '../views/Kontak.vue'
 import Prodact from '../views/Prodact.vue'
-
+import produk from '../views/admin/produk.vue' // Perbaikan: mengimpor produk
 
 import LayoutAdmin from '../layout/layout.vue'
 import admin from '../views/admin/dashboard.vue';
 import tabel from '../views/tabel/tabel_user.vue';
 import profile from '../views/admin/profile.vue';
 import kontak from '../views/tabel/tabel_kontak.vue';
-import produk from '../views/admin/produk.vue';
+import addProduk from '../views/admin/addProduk.vue';
+import editproduk from '../views/admin/editproduk.vue';
 
-
-function guardMyroute(to, from, next)
-{
- var isAuthenticated= false;
-if(localStorage.getItem('token'))
-  isAuthenticated = true;
- else
-  isAuthenticated= false;
- if(isAuthenticated) 
- {
-  next(); // allow to enter route
- } 
- else
- {
-  next('/login'); // go to '/login';
- }
+function guardMyroute(to, from, next) {
+  var isAuthenticated = false;
+  if (localStorage.getItem('token'))
+    isAuthenticated = true;
+  else
+    isAuthenticated = false;
+  if (isAuthenticated) {
+    next(); // allow to enter route
+  } else {
+    next('/login'); // go to '/login';
+  }
 }
 
 const router = createRouter({
@@ -55,7 +51,7 @@ const router = createRouter({
     },
     {
       path: '/admin',
-      name: 'LayoutAdmin',  
+      name: 'LayoutAdmin',
       component: LayoutAdmin,
       beforeEnter: guardMyroute,
       children: [
@@ -80,20 +76,20 @@ const router = createRouter({
           component: kontak,
         },
         {
-          path: '/admin/produk', 
-          name: 'produk',
-          component: produk,
+          path: '/admin/produk',
+          name: 'admin produk',
+          component: produk, // Perbaikan: menggunakan produk
         },
-        // // {
-        //   path: '/admin/profile',
-        //   name: 'profile',
-        //   component: profile
-        // },
-        // {
-        //   path: '/kategori',
-        //   name: 'kategori',
-        //   component: tabkat
-        // },
+        {
+          path: '/admin/addProduk',
+          name: 'addProduk',
+          component: addProduk,
+        },
+        {
+          path: '/admin/editProduk/:id',
+          name: 'editProduk',
+          component: editproduk,
+        },
       ]
     },
   ]

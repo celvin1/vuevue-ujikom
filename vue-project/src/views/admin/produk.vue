@@ -3,7 +3,9 @@
       <div class="mt-8 max-w-screen-lg px-2">
         <div class="sm:flex sm:items-center sm:justify-between flex-col sm:flex-row">
           <p class="flex-1 text-base font-bold text-gray-900">Daftar Produk</p>
-          <button @click="addProduct" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Tambah Data</button>
+          <button @click="toAddProduk" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            Tambah Produk
+          </button>
         </div>
   
         <div class="mt-6 overflow-hidden rounded-xl border shadow">
@@ -13,7 +15,7 @@
                 <th class="whitespace-normal py-4 text-sm font-medium text-gray-500 sm:px-6">Nama Produk</th>
                 <th class="whitespace-normal py-4 text-sm font-medium text-gray-500 sm:px-6">Deskripsi</th>
                 <th class="whitespace-normal py-4 text-sm font-medium text-gray-500 sm:px-6">Gambar</th>
-                <th class="whitespace-normal py-4 text-sm font-medium text-gray-500 sm:px-6">Aksi</th> <!-- Tambahkan kolom untuk aksi -->
+                <th class="whitespace-normal py-4 text-sm font-medium text-gray-500 sm:px-6">Aksi</th>
               </tr>
             </thead>
             <tbody class="lg:border-gray-300">
@@ -24,8 +26,8 @@
                   <img :src="product.gambar" alt="Gambar Produk" class="h-16 w-16">
                 </td>
                 <td class="whitespace-no-wrap py-4 text-sm font-normal text-gray-500 sm:px-6">
-                  <button @click="editProduct(product)" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2">Edit</button>
-                  <button @click="deleteProduct(product.id)" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Hapus</button>
+                  <button @click="editProduct(product.id)" class="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-2 rounded mr-2">Edit</button>
+                  <button @click="confirmDeleteProduct(product.id)" class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded">Delete</button>
                 </td>
               </tr>
             </tbody>
@@ -34,6 +36,7 @@
       </div>
     </div>
   </template>
+  
   
   <script>
   import { mapGetters, mapActions } from 'vuex';
@@ -46,18 +49,33 @@
       this.fetchProducts();
     },
     methods: {
-      ...mapActions('produk', ['fetchProducts', 'deleteProduct']), // Tambahkan action deleteProduct di sini
-      editProduct(product) {
-        // Fungsi untuk mengedit produk
+      ...mapActions('produk', ['fetchProducts']),
+      toAddProduk() {
+        this.$router.push('/admin/addProduk')
+      },
+      editProduct(productId) {
+        // Implement logic to navigate to edit product page with productId
+        this.$router.push(`/admin/editProduk/${productId}`);
+      },
+      confirmDeleteProduct(productId) {
+        if (confirm('Apakah Anda yakin ingin menghapus produk ini?')) {
+          this.deleteProduct(productId);
+        }
       },
       deleteProduct(productId) {
-        // Panggil action deleteProduct dengan productId
-        this.deleteProduct(productId);
-      },
-      addProduct() {
-        // Fungsi untuk menambahkan produk baru
+        // Implement logic to delete product with productId
+        this.$store.dispatch('produk/deleteProduct', productId)
+          .then(() => {
+            console.log('Product deleted successfully:', productId);
+            // Optionally, you can fetch products again after deletion
+            // this.fetchProducts();
+          })
+          .catch(error => {
+            console.error('Error deleting product:', error);
+          });
       }
     },
   };
   </script>
+  
   

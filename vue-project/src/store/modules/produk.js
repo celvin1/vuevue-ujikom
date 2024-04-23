@@ -8,9 +8,7 @@ const produk = {
   },
   getters: {
     getAllProducts: (state) => state.products,
-    getProductById: (state) => (id) => {
-      return state.products.find(product => product.id === id);
-    },
+    getProductById: (state) => state.currentProduct,
     getCurrentProduct: (state) => state.currentProduct,
   },
   actions: {
@@ -28,14 +26,23 @@ const produk = {
         const response = await axios.get(`http://localhost:8080/api/v1/produk/${productId}`);
         commit("SET_CURRENT_PRODUCT", response.data);
       } catch (error) {
-        console.error(error);
+        console.error(error.response.message);
         throw error;
       }
     },
     async createProduct({ commit }, productData) {
       try {
-        const response = await axios.post("http://localhost:8080/api/v1/produk/", productData);
+        const response = await axios.post("http://localhost:8080/api/v1/produk", productData);
         commit("ADD_PRODUCT", response.data);
+        return response.data;
+      } catch (error) {
+        console.error(error);
+        throw error;
+      }
+    },
+    async updateProduct({ commit }, productData) {
+      try {
+        const response = await axios.put(`http://localhost:8080/api/v1/produk/${productData.id}`, productData);
         return response.data;
       } catch (error) {
         console.error(error);
@@ -44,8 +51,9 @@ const produk = {
     },
     async deleteProduct({ commit }, productId) {
       try {
-        await axios.delete(`http://localhost:8080/api/v1/produk/${productId}`);
-        commit("REMOVE_PRODUCT", productId);
+        const response = await axios.delete(`http://localhost:8080/api/v1/produk/${productId}`);
+        commit("DELETE_PRODUCT", productId);
+        return response.data;
       } catch (error) {
         console.error(error);
         throw error;
@@ -63,7 +71,7 @@ const produk = {
     ADD_PRODUCT(state, newProduct) {
       state.products.push(newProduct);
     },
-    REMOVE_PRODUCT(state, productId) {
+    DELETE_PRODUCT(state, productId) {
       state.products = state.products.filter(product => product.id !== productId);
     },
   },

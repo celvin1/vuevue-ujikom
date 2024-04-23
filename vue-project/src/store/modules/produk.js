@@ -58,6 +58,7 @@ const produk = {
         console.error(error);
         throw error;
       }
+      
     },
     // actions lainnya ...
   },

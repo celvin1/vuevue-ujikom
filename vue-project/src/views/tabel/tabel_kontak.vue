@@ -1,3 +1,4 @@
+
 <template>
     <div class="text-gray-900 ml-64 mt-20 p-10">
         <div class="flex items-center justify-between pb-6">
@@ -14,7 +15,7 @@
                             <th class="px-5 py-3">ID</th>
                             <th class="px-5 py-3">NAMA</th>
                             <th class="px-5 py-3">EMAIL</th>
-                            <th class="px-5 py-3">DESCRIPTION</th>
+                            <th class="px-5 py-3">description</th>
                             <th class="px-5 py-3">STATUS </th>
                         </tr>
                     </thead>

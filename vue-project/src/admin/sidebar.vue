@@ -5,8 +5,8 @@
         <div class="flex mt-10 items-center px-4">
           <img class="h-12 w-auto max-w-full align-middle" src="" alt="" />
           <div class="flex ml-3 flex-col">
-            <h3 class="font-medium">Sarah Carter</h3>
-            <p class="text-xs text-gray-500">Sr. Engineer</p>
+            <h3 class="font-medium">admin</h3>
+           
           </div>
         </div>
 
@@ -80,23 +80,8 @@
             </ul>
           </nav>
 
-          <span class="ml-3 mt-10 mb-2 block text-xs font-semibold text-gray-500">Content Management</span>
 
-          <nav class="flex-1">
-            <ul>
-              <li>
-                <a href="#"
-                  class="flex cursor-pointer items-center border-l-rose-600 py-2 px-4 text-sm font-medium text-gray-600 outline-none transition-all duration-100 ease-in-out hover:border-l-4 hover:border-l-rose-600 hover:text-rose-600 focus:border-l-4">
-                  <svg class="mr-4 h-5 w-5 align-middle" xmlns="http://www.w3.org/2000/svg" fill="none"
-                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                      d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
-                  </svg>
-                  Blogs
-                </a>
-              </li>
-            </ul>
-          </nav>
+        
 
           <button
             class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"

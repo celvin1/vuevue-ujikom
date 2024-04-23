@@ -70,22 +70,4 @@
   
   </template>
 
-  <!-- <script>
-router.beforeEach((to, from, next) => {
-  const isLoggedIn = checkIfUserIsLoggedIn(); // Fungsi untuk memeriksa apakah pengguna sudah masuk atau belum
-
-  if (to.matched.some(record => record.meta.requiresAuth)) {
-    // Halaman membutuhkan autentikasi
-    if (!isLoggedIn) {
-      // Jika pengguna belum masuk, arahkan ke halaman login
-      next({ name: 'Login' });
-    } else {
-      // Jika pengguna sudah masuk, lanjutkan ke halaman yang diminta
-      next();
-    }
-  } else {
-    // Halaman tidak membutuhkan autentikasi, lanjutkan saja
-    next();
-  }
-});
-</script> -->
+  

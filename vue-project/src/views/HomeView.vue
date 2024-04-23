@@ -46,67 +46,38 @@ Opsi pertama menambahkan strip vinil di atas fasia, kap mesin, atap, serta dek b
 </div>
 
 <aside aria-label="Related Articles" class="mx-auto mt-10 max-w-screen-xl py-20">
-  <h2 class="mb-8 text-center text-5xl font-bold text-gray-900">More Blogs</h2>
-
-  <div class="mx-auto grid max-w-screen-lg justify-center px-4 sm:grid-cols-2 sm:gap-6 sm:px-8 md:grid-cols-3">
-    <article class="mx-auto my-4 flex flex-col overflow-hidden rounded-lg border border-gray-300 bg-white text-gray-900 transition hover:translate-y-2 hover:shadow-lg">
-  <a href="#" class="flex flex-col h-full">
-    <img src="https://images.unsplash.com/photo-1569705460033-cfaa4bf9f822?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8YXdhcmRzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" class="h-56 w-full object-cover" alt="" />
-    <div class="flex-auto px-6 py-5 flex flex-col justify-between">
-      <div>
-        <span class="mb-2 flex items-center text-sm font-semibold">
-          <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14" />
-          </svg>
-          Marketing</span
-        >
-        <h3 class="mt-4 mb-3 text-xl font-semibold xl:text-2xl">Marketing is looking for untapped opportunities</h3>
-        <p class="mb-4 text-base font-light">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam tempore officiis. Lorem, ipsum dolor.</p>
-      </div>
-      <span class="inline-block cursor-pointer select-none rounded-full border border-gray-800 bg-gray-800 px-2 py-1 text-center align-middle text-sm font-semibold leading-normal text-white no-underline shadow-sm self-center mt-4">Read Now</span>
-    </div>
-  </a>
-</article>
-
-<article class="mx-auto my-4 flex flex-col overflow-hidden rounded-lg border border-gray-300 bg-white text-gray-900 transition hover:translate-y-2 hover:shadow-lg">
-  <a href="#" class="flex flex-col h-full">
-    <img src="https://images.unsplash.com/photo-1569705460033-cfaa4bf9f822?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8YXdhcmRzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" class="h-56 w-full object-cover" alt="" />
-    <div class="flex-auto px-6 py-5 flex flex-col justify-between">
-      <div>
-        <span class="mb-2 flex items-center text-sm font-semibold">
-          <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14" />
-          </svg>
-          Marketing</span
-        >
-        <h3 class="mt-4 mb-3 text-xl font-semibold xl:text-2xl">Marketing is looking for untapped opportunities</h3>
-        <p class="mb-4 text-base font-light">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam tempore officiis. Lorem, ipsum dolor.</p>
-      </div>
-      <span class="inline-block cursor-pointer select-none rounded-full border border-gray-800 bg-gray-800 px-2 py-1 text-center align-middle text-sm font-semibold leading-normal text-white no-underline shadow-sm self-center mt-4">Read Now</span>
-    </div>
-  </a>
-</article>
-
-    <article class="mx-auto my-4 flex flex-col overflow-hidden rounded-lg border border-gray-300 bg-white text-gray-900 transition hover:translate-y-2 hover:shadow-lg">
-  <a href="#" class="flex flex-col h-full">
-    <img src="https://images.unsplash.com/photo-1569705460033-cfaa4bf9f822?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8YXdhcmRzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" class="h-56 w-full object-cover" alt="" />
-    <div class="flex-auto px-6 py-5 flex flex-col justify-between">
-      <div>
-        <span class="mb-2 flex items-center text-sm font-semibold">
-          <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14" />
-          </svg>
-          Marketing</span
-        >
-        <h3 class="mt-4 mb-3 text-xl font-semibold xl:text-2xl">Marketing is looking for untapped opportunities</h3>
-        <p class="mb-4 text-base font-light">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam tempore officiis. Lorem, ipsum dolor.</p>
-      </div>
-      <span class="inline-block cursor-pointer select-none rounded-full border border-gray-800 bg-gray-800 px-2 py-1 text-center align-middle text-sm font-semibold leading-normal text-white no-underline shadow-sm self-center mt-4">Read Now</span>
-    </div>
-  </a>
-</article>
+  <h2 class="mb-8 text-center text-5xl font-bold text-gray-900">produk</h2>
+  
+  <div class="mx-auto grid max-w-screen-lg justify-center px-4 sm:grid-cols-2 sm:gap-6 sm:px-2 md:grid-cols-4">
+    <article class="mx-auto my-4 flex flex-col overflow-hidden rounded-lg border border-gray-300 bg-white text-gray-900 transition hover:translate-y-2 hover:shadow-lg" v-for="item in produk?.slice(0, 4)" :key="item.id">
+        <img :src="item.gambar" class="h-56 w-56 object-cover" alt="" />
+        <div class="flex-auto px-6 py-5">
+          <span class="mb-2 flex items-center text-sm font-semibold">
+            {{ item.nama_produk }}</span >
+     
+          <p class=" text-base font-light">{{ item.description }}</p>
+          
+          <span class="inline-block cursor-pointer select-none rounded-full border border-gray-800 bg-gray-800 px-2 py-1 text-center align-middle text-sm font-semibold leading-normal text-white no-underline shadow-sm">Read Now</span>
+        </div>
+    </article>
   </div>
 </aside>
+<aside aria-label="Related Articles" class="mx-auto mt-10 max-w-screen-xl py-20">
+
+<div class="mx-auto grid max-w-screen-lg justify-center px-4 sm:grid-cols-2 sm:gap-6 sm:px-2 md:grid-cols-4">
+  <article class="mx-auto my-4 flex flex-col overflow-hidden rounded-lg border border-gray-300 bg-white text-gray-900 transition hover:translate-y-2 hover:shadow-lg" v-for="item in produk?.slice(4, 8)" :key="item.id">
+      <img :src="item.gambar" class="h-56 w-56 object-cover" alt="" />
+      <div class="flex-auto px-6 py-5">
+        <span class="mb-2 flex items-center text-sm font-semibold">
+          {{ item.nama_produk }}</span
+        >
+        <p class=" text-base font-light">{{ item.description }}</p>
+        <span class="inline-block cursor-pointer select-none rounded-full border border-gray-800 bg-gray-800 px-2 py-1 text-center align-middle text-sm font-semibold leading-normal text-white no-underline shadow-sm">Read Now</span>
+      </div>
+  </article>
+</div>
+</aside>
+
 
 
   <h2 class="mb-8 text-center text-5xl font-bold text-gray-900">informasi</h2>
@@ -184,4 +155,33 @@ Opsi pertama menambahkan strip vinil di atas fasia, kap mesin, atap, serta dek b
 </template>
 
 
-
+<script>
+import { mapActions, mapGetters } from 'vuex';
+  
+  export default{
+    computed: {
+      ...mapGetters('datauser', ['getDataUser']),
+      ...mapGetters('produk', ['getAllProducts']),
+      ...mapGetters('kontak', ['getDataKontak']),
+      users(){
+        return this.getDataUser;
+      },
+      produk(){
+        return this.getAllProducts.data;
+      },
+      pesan(){
+        return this.getDataKontak;
+      }
+    },
+    methods:{
+      ...mapActions('datauser', ['fetchDataUser']),
+      ...mapActions('produk', ['fetchProducts']),
+      ...mapActions('kontak', ['fetchDataKontak'])
+    },
+    mounted(){
+      this.fetchDataUser();
+      this.fetchProducts();
+      this.fetchDataKontak();
+    }
+  }
+</script>

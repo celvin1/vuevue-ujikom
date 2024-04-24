@@ -1,4 +1,5 @@
 <template>
+     <div class="-ml-28 w-screen flex justify-center"></div>
     <div class="flex items-center justify-center min-h-screen bg-gray-100">
       <div class="bg-white shadow-md rounded-md p-6 max-w-md">
         <h1 class="text-2xl font-bold mb-4 text-center">Edit Produk</h1>
@@ -23,6 +24,7 @@
   
   <script>
   import { mapActions, mapGetters } from 'vuex';
+  import Swal from 'sweetalert2';
   
   export default {
     data() {
@@ -31,55 +33,56 @@
           nama_produk: '',
           description: '',
           gambar: '',
-          
         }
       };
     },
     computed: {
       ...mapGetters('produk', ['getProductById']),
-      produk(){
-        return this.getProductById
+      produk() {
+        return this.getProductById;
       }
     },
     methods: {
-    ...mapActions('produk', ['fetchProductById', 'updateProduct', 'deleteProduct']), // Perbaiki pemanggilan aksi dengan nama yang benar
-    
-    async updateProduk() {
-      const product = {
-        id: this.$route.params.id, // Perbaiki pengambilan ID
-        nama_produk: this.formData.nama_produk, // Ambil nilai dari formData
-        description: this.formData.description,
-        gambar: this.formData.gambar,
-      };
-      try {
-        const success = await this.$store.dispatch('produk/updateProduct', product); // Perbaiki pemanggilan aksi dengan nama yang benar
-        if (success) {
-          this.$router.push('/admin/produk')
-          alert("Berhasil memperbarui produk");
+      ...mapActions('produk', ['fetchProductById', 'updateProduct', 'deleteProduct']),
+      async updateProduk() {
+        const product = {
+          id: this.$route.params.id,
+          nama_produk: this.formData.nama_produk,
+          description: this.formData.description,
+          gambar: this.formData.gambar,
+        };
+        try {
+          await this.$store.dispatch('produk/updateProduct', product);
+          Swal.fire({
+            icon: 'success',
+            title: 'Produk berhasil diperbarui',
+            showConfirmButton: false,
+            timer: 1500
+          });
+          this.$router.push('/admin/produk');
+        } catch (error) {
+          Swal.fire({
+            icon: 'error',
+            title: 'Gagal memperbarui produk',
+            text: error.message,
+          });
         }
-      } catch(error) {
-        alert("Gagal memperbarui produk");
+      },
+      async fetchData() {
+        await this.fetchProductById(this.$route.params.id);
+        const produk = this.produk.data;
+        console.log(produk);
+        if (produk) {
+          this.formData = {
+            nama_produk: produk.nama_produk,
+            description: produk.description,
+            gambar: produk.gambar
+          };
+        }
       }
     },
-    
-    async fetchData() {
-    await this.fetchProductById(this.$route.params.id);
-    const produk = this.produk.data;
-    console.log(produk); // Tambahkan ini untuk memeriksa nilai produk di konsol browser
-    if (produk) {
-      this.formData = {
-        nama_produk: produk.nama_produk,
-        description: produk.description,
-        gambar: produk.gambar
-       
-      };
-    }
-  }
-  
-  },
-  
     mounted() {
-      this.fetchData(); // Fetch product data when component is mounted
+      this.fetchData();
     }
   };
   </script>
@@ -87,3 +90,4 @@
   <style>
   /* Add your custom styles here */
   </style>
+  

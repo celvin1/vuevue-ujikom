@@ -28,18 +28,17 @@
     <div class="grid gap-8 md:grid-cols-2 lg:gap-12">
       <div class="md:pt-8 lg:flex lg:flex-col lg:justify-center">
 
-        <h1 class="mb-4 text-center text-2xl font-bold text-gray-800 sm:text-3xl md:mb-6 md:text-left">HONDA CONCEPTD</h1>
+        <h1 class="mb-4 text-center text-2xl font-bold text-gray-800 sm:text-3xl md:mb-6 md:text-left">AVANZA</h1>
 
-        <p class="mb-6 text-gray-500 sm:text-lg md:mb-8">Honda Concept D 4 adalah salah satu konsep mobil terbaru yang dipresentasikan oleh Honda. Mobil ini mengusung desain yang futuristik dan inovatif, mencerminkan visi Honda dalam menghadirkan kendaraan masa depan yang ramah lingkungan dan canggih.
+        <p class="mb-6 text-gray-500 sm:text-lg md:mb-8">Toyota Avanza adalah mobil MPV (Multi-Purpose Vehicle) yang diproduksi oleh Toyota, salah satu merek otomotif terkemuka di dunia. Avanza pertama kali diperkenalkan pada tahun 2003 dan sejak itu telah menjadi salah satu mobil paling populer di kelasnya, terutama di pasar Asia Tenggara.
 
-Desain eksterior Honda Concept D 4 menampilkan garis-garis yang dinamis dan aerodinamis, menciptakan kesan modern dan sporty. Dengan proporsi yang proporsional dan gagah, mobil ini menarik perhatian dengan tampilan yang mengesankan dan futuristik.</p>
+</p>
       </div>
       <div>
         <div class="h-64 overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-auto">
-          <img src="https://3.bp.blogspot.com/-jk_wL2fBTrs/VU3B6h9evQI/AAAAAAAAARk/ksWxstFl2YA/s1600/Mobil%2BHonda%2BTerbaru%2BConcept%2BD%2BMemulai%2BDebutnya%2Bdi%2BChina.jpg" loading="lazy" alt="Photo by Martin Sanchez" class="h-full w-full object-cover object-center" />
+          <img src="https://bursaotomotif.net/wp-content/uploads/2016/06/gambar-mobil-avanza-2016-1024x568.jpg" loading="lazy" alt="Photo by Martin Sanchez" class="h-full w-full object-cover object-center" />
         </div>
       </div>
-     
     </div>
   </div>
 </div>

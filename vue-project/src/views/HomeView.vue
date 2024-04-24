@@ -70,7 +70,7 @@ Opsi pertama menambahkan strip vinil di atas fasia, kap mesin, atap, serta dek b
             <p class="mt-2 text-xl font-semibold text-gray-800"></p>
           </div>
           <div class="mt-8 flex items-center justify-center md:mt-24">
-            <a href="http://localhost:5173/prodact">
+            <a href="http://localhost:5173/detailmobil2">
               <img class="" src="https://coversuper.com/blog/wp-content/uploads/2018/05/modifikasi-mobil.jpg" alt="" />
             </a>
           </div>
@@ -82,7 +82,7 @@ Opsi pertama menambahkan strip vinil di atas fasia, kap mesin, atap, serta dek b
             <p class="mt-2 text-xl font-semibold text-gray-800"></p>
           </div>
           <div class="mt-8 flex items-center justify-center md:mt-24">
-            <a href="http://localhost:5173/prodact">
+            <a href="http://localhost:5173/detailmobil3">
               <img src="https://4.bp.blogspot.com/-M3ElGl66n-8/UphTWfI2X1I/AAAAAAAABGE/74UzEgmWeH4/s1600/mobil+laris+9.jpg" alt="" />
             </a>
           </div>
@@ -97,7 +97,7 @@ Opsi pertama menambahkan strip vinil di atas fasia, kap mesin, atap, serta dek b
             <p class="mt-2 text-xl font-semibold text-gray-800"></p>
           </div>
           <div class="mt-28 flex items-center justify-center md:mt-3">
-            <a href="http://localhost:5173/prodact">
+            <a href="http://localhost:5173/detailmobil4">
               <img src="https://bursaotomotif.net/wp-content/uploads/2016/06/gambar-mobil-avanza-2016-1024x568.jpg" alt="" />
             </a>
           </div>
@@ -109,7 +109,7 @@ Opsi pertama menambahkan strip vinil di atas fasia, kap mesin, atap, serta dek b
             <p class="mt-2 text-xl font-semibold text-gray-800"></p>
           </div>
           <div class="mt-28 flex items-center justify-center md:mt-1">
-            <a href="http://localhost:5173/prodact">
+            <a href="http://localhost:5173/detailmobil5">
               <img src="https://3.bp.blogspot.com/-l_j7YWnv25o/WdDpl_9y6_I/AAAAAAAAABM/mokm6ucaReUo9JVrjEClJ-EjkblCswP_ACLcBGAs/s1600/expander1.jpg" alt="" />
             </a>
           </div>
@@ -122,17 +122,18 @@ Opsi pertama menambahkan strip vinil di atas fasia, kap mesin, atap, serta dek b
 
   <h2 class="mb-8 text-center text-5xl font-bold text-gray-900">informasi</h2>
     <!-- /Heading -->
-    <div class="grid gap-8  md:grid-cols-2 lg:grid-cols-4 ">
+    <div class="grid gap-6  md:grid-cols-2 lg:grid-cols-4 ">
       <!-- Article -->
       <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
     <a href="#">
         <img class="rounded-t-lg" src="https://itstimeforeveryone.toyota.astra.co.id/storage/images/banners/TC%2030%20FEBRUARI%20-%20KENDARAAN%20ELEKTRIFIKASI%20TOYOTA%20DI%20IIMS%202024%20(UMUM).jpg" alt="" />
     </a>
-    <div class="p-5">
+    <div class="p-3">
         <a href="#">
             <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Presiden Jokowi Tertarik All New Yaris Cross HEV, Ini Daftar Kendaraan Elektrifikasi Toyota di IIMS 2024</h5>
+            <br>
         </a>
-        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Toyota menghadirkan berbagai teknologi elektrifikasi di Indonesia International Motor Show (IIMS) 2024 di JIExpo Kemayoran Jakarta, 15–25 Februari 2024. Mulai dari Hybrid Electric Vehicle (HEV), Plug-in Hybrid Electric Vehicle (PHEV), Battery Electric Vehicle (BEV), bahkan Fuel Cell Electric Vehicle (FCEV). </p>
+        <p class="mb-2 font-semibold text-black-700 dark:text-gray-400">Toyota menghadirkan berbagai teknologi elektrifikasi di Indonesia International Motor Show (IIMS) 2024 di JIExpo Kemayoran Jakarta, 15–25 Februari 2024. Mulai dari Hybrid Electric Vehicle (HEV), Plug-in Hybrid Electric Vehicle (PHEV), Battery Electric Vehicle (BEV), bahkan Fuel Cell Electric Vehicle (FCEV). </p>
        
     </div>
 </div>
@@ -144,6 +145,7 @@ Opsi pertama menambahkan strip vinil di atas fasia, kap mesin, atap, serta dek b
     <div class="p-5">
         <a href="#">
             <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Daftar Harga All New Vellfire HEV yang Launching di IIMS 2024</h5>
+            <br>
         </a>
         <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Hadirkan ever-better cars di Indonesia, PT Toyota-Astra Motor (TAM) sekali lagi menambah opsi xEV bagi pelanggan. Kali ini dengan teknologi hybrid pada All New Vellfire HEV di segmen Luxury MPV yang dipamerkan di ajang Indonesia International Motor Show (IIMS) 2024 di JIExpo Kemayoran Jakarta, 15–25 Februari 2024.</p>
       
@@ -159,6 +161,7 @@ Opsi pertama menambahkan strip vinil di atas fasia, kap mesin, atap, serta dek b
     <div class="p-5">
         <a href="#">
             <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Cara Pilah dan Setor Sampah ke Toyota Waste Station, Dapat Rewards dan Bantu Ciptakan Lingkungan yang Semakin Bersih</h5>
+            <br>
         </a>
         <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Toyota ingin mengajak semua orang ikut berkontribusi menciptakan masa depan yang lebih baik. Dengan gerakan It’s Time For Everyone, siapa saja dapat berkontribusi untuk mewujudkan netralitas karbon bagi Indonesia dengan memulai tindakan kecil, seperti mengurangi dan mendaur ulang penggunaan plastik, kapan pun dan di mana pun.</p>
        
@@ -173,6 +176,7 @@ Opsi pertama menambahkan strip vinil di atas fasia, kap mesin, atap, serta dek b
     <div class="p-5">
         <a href="#">
             <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Instagram Toyota Indonesia Berikan Apresiasi kepada Kontributor Terbaik Toyota Waste Station 2023  </h5>
+            <br>
         </a>
         <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Dengan gerakan It’s Time For Everyone, siapa saja dapat berkontribusi untuk mewujudkan netralitas karbon bagi Indonesia di waktu yang akan datang dengan memulai tindakan kecil, seperti mengurangi dan mendaur ulang penggunaan plastik, kapan pun dan di mana pun!</p>
     </div>

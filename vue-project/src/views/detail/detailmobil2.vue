@@ -27,19 +27,17 @@
   <div class="mx-auto max-w-screen-xl px-4 md:px-8">
     <div class="grid gap-8 md:grid-cols-2 lg:gap-12">
       <div class="md:pt-8 lg:flex lg:flex-col lg:justify-center">
+        <h1 class="mb-4 text-center text-2xl font-bold text-gray-800 sm:text-3xl md:mb-6 md:text-left">BMW</h1>
 
-        <h1 class="mb-4 text-center text-2xl font-bold text-gray-800 sm:text-3xl md:mb-6 md:text-left">HONDA CONCEPTD</h1>
+        <p class="mb-6 text-gray-500 sm:text-lg md:mb-8">BMW, atau Bayerische Motoren Werke AG, adalah produsen mobil, sepeda motor, dan mesin asal Jerman yang dikenal atas inovasi, kualitas, dan performa kendaraannya. Didirikan pada tahun 1916, perusahaan ini telah menjadi salah satu merek otomotif terkemuka di dunia.
 
-        <p class="mb-6 text-gray-500 sm:text-lg md:mb-8">Honda Concept D 4 adalah salah satu konsep mobil terbaru yang dipresentasikan oleh Honda. Mobil ini mengusung desain yang futuristik dan inovatif, mencerminkan visi Honda dalam menghadirkan kendaraan masa depan yang ramah lingkungan dan canggih.
-
-Desain eksterior Honda Concept D 4 menampilkan garis-garis yang dinamis dan aerodinamis, menciptakan kesan modern dan sporty. Dengan proporsi yang proporsional dan gagah, mobil ini menarik perhatian dengan tampilan yang mengesankan dan futuristik.</p>
+Salah satu ciri khas BMW adalah desain yang elegan dan dinamis, yang sering kali diintegrasikan dengan teknologi terkini untuk menghasilkan kendaraan yang memukau dan unggul dalam hal kinerja. BMW juga dikenal dengan jajaran produknya yang beragam, mulai dari mobil sedan, coupe, SUV, hingga mobil sport mewah.</p>
       </div>
       <div>
         <div class="h-64 overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-auto">
-          <img src="https://3.bp.blogspot.com/-jk_wL2fBTrs/VU3B6h9evQI/AAAAAAAAARk/ksWxstFl2YA/s1600/Mobil%2BHonda%2BTerbaru%2BConcept%2BD%2BMemulai%2BDebutnya%2Bdi%2BChina.jpg" loading="lazy" alt="Photo by Martin Sanchez" class="h-full w-full object-cover object-center" />
+          <img src="https://coversuper.com/blog/wp-content/uploads/2018/05/modifikasi-mobil.jpg" loading="lazy" alt="Photo by Martin Sanchez" class="h-full w-full object-cover object-center" />
         </div>
       </div>
-     
     </div>
   </div>
 </div>

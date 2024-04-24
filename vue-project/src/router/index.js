@@ -5,6 +5,10 @@ import Kontak from '../views/Kontak.vue'
 import Prodact from '../views/Prodact.vue'
 import produk from '../views/admin/produk.vue' // Perbaikan: mengimpor produk
 import detailmobil1 from '../views/detail/detailmobil1.vue';
+import detailmobil2 from '../views/detail/detailmobil2.vue';
+import detailmobil3 from '../views/detail/detailmobil3.vue';
+import detailmobil4 from '../views/detail/detailmobil4.vue';
+import detailmobil5 from '../views/detail/detailmobil5.vue';
 
 import LayoutAdmin from '../layout/layout.vue'
 import admin from '../views/admin/dashboard.vue';
@@ -15,17 +19,15 @@ import addProduk from '../views/admin/addProduk.vue';
 import editproduk from '../views/admin/editproduk.vue';
 
 function guardMyroute(to, from, next) {
-  var isAuthenticated = false;
-  if (localStorage.getItem('token'))
-    isAuthenticated = true;
-  else
-    isAuthenticated = false;
-  if (isAuthenticated) {
-    next(); // allow to enter route
+  const isAuthenticated = localStorage.getItem('token');
+
+  if (to.name !== 'login' && !isAuthenticated) {
+    next('/login'); // Redirect to login page if not authenticated and not accessing login page
   } else {
-    next('/login'); // go to '/login';
+    next(); // Continue to the requested route
   }
 }
+
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -54,6 +56,26 @@ const router = createRouter({
       path: '/detailmobil1',
       name: 'detailmobil1',
       component: detailmobil1,
+    },
+    {
+      path: '/detailmobil2',
+      name: 'detailmobil2',
+      component: detailmobil2,
+    },
+    {
+      path: '/detailmobil3',
+      name: 'detailmobil3',
+      component: detailmobil3,
+    },
+    {
+      path: '/detailmobil4',
+      name: 'detailmobil4',
+      component: detailmobil4,
+    },
+    {
+      path: '/detailmobil5',
+      name: 'detailmobil5',
+      component: detailmobil5,
     },
     {
       path: '/admin',
@@ -101,4 +123,4 @@ const router = createRouter({
   ]
 });
 
-export default router
+export default router;

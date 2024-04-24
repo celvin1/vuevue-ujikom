@@ -6,7 +6,6 @@
           <img class="h-12 w-auto max-w-full align-middle" src="" alt="" />
           <div class="flex ml-3 flex-col">
             <h3 class="font-medium">admin</h3>
-           
           </div>
         </div>
 
@@ -80,9 +79,6 @@
             </ul>
           </nav>
 
-
-        
-
           <button
             class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             @click="validateLogout">
@@ -91,32 +87,49 @@
 
         </div>
       </div>
-
     </div>
-
   </div>
 </template>
 
 <script>
+import Swal from 'sweetalert2';
+
 export default {
   methods: {
     validateLogout() {
-      if (confirm('Apakah Anda yakin ingin logout?')) {
-        this.logoutAndRedirect();
-      } else {
-        alert('Logout dibatalkan');
-      }
+      // Menampilkan konfirmasi SweetAlert2
+      Swal.fire({
+        title: 'Apakah Anda yakin ingin logout?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#d33',
+        cancelButtonColor: '#3085d6',
+        confirmButtonText: 'Logout',
+        cancelButtonText: 'Batal'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          this.logoutAndRedirect();
+        }
+      });
     },
     logoutAndRedirect() {
       // Lakukan proses logout di sini
       // Contoh: hapus token, bersihkan data pengguna dari local storage, dll.
 
-      // Tampilkan notifikasi bahwa logout berhasil
-      alert('Anda telah berhasil logout');
+      // Tampilkan notifikasi bahwa logout berhasil dengan SweetAlert2
+      Swal.fire({
+        title: 'Logout berhasil!',
+        icon: 'success',
+        timer: 1500,
+        timerProgressBar: true,
+        showConfirmButton: false
+      });
 
       // Redirect ke halaman login
       // Ganti '/login' dengan path halaman login yang sesuai
-      window.location.href = '/login';
+      setTimeout(() => {
+        window.location.href = '/login';
+      }, 1500);
     }
   }
 }

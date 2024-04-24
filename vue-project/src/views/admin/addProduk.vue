@@ -1,4 +1,5 @@
 <template>
+  <div class="-ml-28 w-screen flex justify-center"></div>
     <div class="flex items-center justify-center min-h-screen bg-gray-100">
       <div class="bg-white shadow-md rounded-md p-6 max-w-md">
         <h1 class="text-2xl font-bold mb-4 text-center">Tambah Produk Baru</h1>

@@ -4,6 +4,7 @@ import home from '../views/HomeView.vue'
 import Kontak from '../views/Kontak.vue'
 import Prodact from '../views/Prodact.vue'
 import produk from '../views/admin/produk.vue' // Perbaikan: mengimpor produk
+import detailmobil1 from '../views/detail/detailmobil1.vue';
 
 import LayoutAdmin from '../layout/layout.vue'
 import admin from '../views/admin/dashboard.vue';
@@ -48,6 +49,11 @@ const router = createRouter({
       path: '/Prodact',
       name: 'Prodact',
       component: Prodact,
+    },
+    {
+      path: '/detailmobil1',
+      name: 'detailmobil1',
+      component: detailmobil1,
     },
     {
       path: '/admin',

@@ -45,39 +45,79 @@ Opsi pertama menambahkan strip vinil di atas fasia, kap mesin, atap, serta dek b
   <div class="h-0.5 w-2 bg-gray-600"></div>
 </div>
 
-<aside aria-label="Related Articles" class="mx-auto mt-10 max-w-screen-xl py-20">
-  <h2 class="mb-8 text-center text-5xl font-bold text-gray-900">produk</h2>
-  
-  <div class="mx-auto grid max-w-screen-lg justify-center px-4 sm:grid-cols-2 sm:gap-6 sm:px-2 md:grid-cols-4">
-    <article class="mx-auto my-4 flex flex-col overflow-hidden rounded-lg border border-gray-300 bg-white text-gray-900 transition hover:translate-y-2 hover:shadow-lg" v-for="item in produk?.slice(0, 4)" :key="item.id">
-        <img :src="item.gambar" class="h-56 w-56 object-cover" alt="" />
-        <div class="flex-auto px-6 py-5">
-          <span class="mb-2 flex items-center text-sm font-semibold">
-            {{ item.nama_produk }}</span >
-     
-          <p class=" text-base font-light">{{ item.description }}</p>
-          
-          <span class="inline-block cursor-pointer select-none rounded-full border border-gray-800 bg-gray-800 px-2 py-1 text-center align-middle text-sm font-semibold leading-normal text-white no-underline shadow-sm">Read Now</span>
-        </div>
-    </article>
-  </div>
-</aside>
-<aside aria-label="Related Articles" class="mx-auto mt-10 max-w-screen-xl py-20">
+<section class="">
+  <div class="mx-auto max-w-md sm:max-w-lg md:max-w-screen-xl">
+    <div class="px-4 py-8 md:px-6 md:py-12 lg:px-20">
+      <h1 class="text-center text-3xl font-semibold text-gray-800 lg:text-4xl">JENIS MOBIL</h1>
 
-<div class="mx-auto grid max-w-screen-lg justify-center px-4 sm:grid-cols-2 sm:gap-6 sm:px-2 md:grid-cols-4">
-  <article class="mx-auto my-4 flex flex-col overflow-hidden rounded-lg border border-gray-300 bg-white text-gray-900 transition hover:translate-y-2 hover:shadow-lg" v-for="item in produk?.slice(4, 8)" :key="item.id">
-      <img :src="item.gambar" class="h-56 w-56 object-cover" alt="" />
-      <div class="flex-auto px-6 py-5">
-        <span class="mb-2 flex items-center text-sm font-semibold">
-          {{ item.nama_produk }}</span
-        >
-        <p class=" text-base font-light">{{ item.description }}</p>
-        <span class="inline-block cursor-pointer select-none rounded-full border border-gray-800 bg-gray-800 px-2 py-1 text-center align-middle text-sm font-semibold leading-normal text-white no-underline shadow-sm">Read Now</span>
+      <div class="mt-8 grid grid-cols-1 gap-6 md:mt-10 md:grid-cols-3 lg:gap-8">
+        
+        <article class="bg-slate-50 p-8">
+          <div class="">
+            <h2 class="text-xl text-gray-600">HONDA CONCEPTD</h2>
+            <p class="mt-2 text-xl font-semibold text-gray-800"></p>
+          </div>
+          <div class="mt-8 flex items-center justify-center md:mt-24">
+            <a href="http://localhost:5173/detailmobil1">
+              <img class="" src="https://3.bp.blogspot.com/-jk_wL2fBTrs/VU3B6h9evQI/AAAAAAAAARk/ksWxstFl2YA/s1600/Mobil%2BHonda%2BTerbaru%2BConcept%2BD%2BMemulai%2BDebutnya%2Bdi%2BChina.jpg" alt="" />
+            </a>
+          </div>
+        </article>
+              
+        <article class="bg-slate-50 p-8">
+          <div class="">
+            <h2 class="text-xl text-gray-600">BMW </h2>
+            <p class="mt-2 text-xl font-semibold text-gray-800"></p>
+          </div>
+          <div class="mt-8 flex items-center justify-center md:mt-24">
+            <a href="http://localhost:5173/prodact">
+              <img class="" src="https://coversuper.com/blog/wp-content/uploads/2018/05/modifikasi-mobil.jpg" alt="" />
+            </a>
+          </div>
+        </article>
+              
+        <article class="bg-slate-50 p-8">
+          <div class="">
+            <h2 class="text-xl text-gray-600">ELISE</h2>
+            <p class="mt-2 text-xl font-semibold text-gray-800"></p>
+          </div>
+          <div class="mt-8 flex items-center justify-center md:mt-24">
+            <a href="http://localhost:5173/prodact">
+              <img src="https://4.bp.blogspot.com/-M3ElGl66n-8/UphTWfI2X1I/AAAAAAAABGE/74UzEgmWeH4/s1600/mobil+laris+9.jpg" alt="" />
+            </a>
+          </div>
+        </article>
       </div>
-  </article>
-</div>
-</aside>
-
+      
+      <div class="mt-4 grid grid-cols-1 gap-5 md:mt-6 md:grid-cols-2 md:gap-6 lg:mt-8 lg:gap-8">
+              
+        <article class="bg-slate-50 p-8">
+          <div>
+            <h2 class="text-xl text-gray-600">AVANZA</h2>
+            <p class="mt-2 text-xl font-semibold text-gray-800"></p>
+          </div>
+          <div class="mt-28 flex items-center justify-center md:mt-3">
+            <a href="http://localhost:5173/prodact">
+              <img src="https://bursaotomotif.net/wp-content/uploads/2016/06/gambar-mobil-avanza-2016-1024x568.jpg" alt="" />
+            </a>
+          </div>
+        </article>
+              
+        <article class="bg-slate-50 p-8">
+          <div>
+            <h2 class="text-xl text-gray-600">XPENDER</h2>
+            <p class="mt-2 text-xl font-semibold text-gray-800"></p>
+          </div>
+          <div class="mt-28 flex items-center justify-center md:mt-1">
+            <a href="http://localhost:5173/prodact">
+              <img src="https://3.bp.blogspot.com/-l_j7YWnv25o/WdDpl_9y6_I/AAAAAAAAABM/mokm6ucaReUo9JVrjEClJ-EjkblCswP_ACLcBGAs/s1600/expander1.jpg" alt="" />
+            </a>
+          </div>
+        </article>
+      </div>      
+    </div>
+  </div>
+</section>
 
 
   <h2 class="mb-8 text-center text-5xl font-bold text-gray-900">informasi</h2>

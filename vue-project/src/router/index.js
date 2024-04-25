@@ -52,6 +52,7 @@ const router = createRouter({
       name: 'Prodact',
       component: Prodact,
     },
+    
     {
       path: '/detailmobil1',
       name: 'detailmobil1',

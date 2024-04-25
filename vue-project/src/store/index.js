@@ -3,6 +3,7 @@ import auth from './modules/auth';
 import datauser from './modules/profile';
 import kontak from './modules/kontak';
 import produk from './modules/produk';
+import Informasi from './views/admin/informasi.vue';
 
 const store = createStore({
   state: {
@@ -13,7 +14,7 @@ const store = createStore({
     datauser,
     kontak,
     produk,
-    
+    Informasi,
   },
 });
 

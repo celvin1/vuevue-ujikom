@@ -93,9 +93,11 @@
 
 <script>
 import Swal from 'sweetalert2';
+import { mapActions, mapGetters } from 'vuex';
 
 export default {
   methods: {
+    ...mapActions('auth', ['logout']),
     validateLogout() {
       // Menampilkan konfirmasi SweetAlert2
       Swal.fire({
@@ -113,10 +115,7 @@ export default {
       });
     },
     logoutAndRedirect() {
-      // Lakukan proses logout di sini
-      // Contoh: hapus token, bersihkan data pengguna dari local storage, dll.
-
-      // Tampilkan notifikasi bahwa logout berhasil dengan SweetAlert2
+      this.logout()
       Swal.fire({
         title: 'Logout berhasil!',
         icon: 'success',

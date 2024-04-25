@@ -4,11 +4,12 @@ const auth = {
   namespaced: true,
   state: {
     token: localStorage.getItem('token') || '',
+    role: localStorage.getItem('role') || '',
     loginError: null,
     dataAddress: []
   },
   getters: {
-    isAuthenticated: (state) => !!state.token,
+    isAuthenticated: (state) => !!state.token && !!state.role,
     getAddress: (state) => state.dataAddress
     
   },
@@ -20,18 +21,21 @@ const auth = {
           credentials
         );
         const token = response.data.token;
-
-        // Save token to localStorage
+        const role = response.data.user.result.role;
+    
+        // Save token and role to localStorage
         localStorage.setItem('token', token);
-        
-
+        localStorage.setItem('role', role);
+    
         commit('SET_TOKEN', token);
-        commit ('SET_LOGIN_ERROR', null)
+        commit('SET_ROLE', role);
+    
+        commit('SET_LOGIN_ERROR', null);
         console.log("token saved:", token);
         return true;
       } catch (error) {
         const errorMessage = error.response.data.message || "Login Failed";
-        commit("SET_LOGIN_ERROR", errorMessage) 
+        commit("SET_LOGIN_ERROR", errorMessage);
         console.error(error);
         return false;
       }
@@ -84,18 +88,22 @@ const auth = {
       // Remove token from localStorage
       const token = localStorage.getItem('token');
       localStorage.removeItem('token');
+      localStorage.removeItem('role');
       commit('SET_TOKEN', '');
       commit('SET_TOKEN', null);
+      commit('SET_ROLE', null);
       //   Log Token removed
       console.log('Token Removed:', token);
-      window.location = "/login";
+      window.location.href = "/login";
     },
   },
   mutations: {
     SET_TOKEN(state, token) {
       state.token = token;
     },
-    
+    SET_ROLE(state, role) {
+      state.role = role;
+    },
     SET_LOGIN_ERROR(state,error){
       state.loginError = error;
     },

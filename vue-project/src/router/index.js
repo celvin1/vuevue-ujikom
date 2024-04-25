@@ -18,15 +18,7 @@ import kontak from '../views/tabel/tabel_kontak.vue';
 import addProduk from '../views/admin/addProduk.vue';
 import editproduk from '../views/admin/editproduk.vue';
 
-function guardMyroute(to, from, next) {
-  const isAuthenticated = localStorage.getItem('token');
-
-  if (to.name !== 'login' && !isAuthenticated) {
-    next('/login'); // Redirect to login page if not authenticated and not accessing login page
-  } else {
-    next(); // Continue to the requested route
-  }
-}
+import store from '@/store'
 
 
 const router = createRouter({
@@ -36,6 +28,23 @@ const router = createRouter({
       path: '/login',
       name: 'login',
       component: login,
+      beforeEnter: (to, from, next) => {
+        const isAuthenticated = store.getters["auth/isAuthenticated"];
+        if (isAuthenticated) {
+          // Redirect user to the appropriate page based on their role
+          const role = localStorage.getItem("role");
+          if (role === "admin") {
+            next("/admin");
+          } else {
+            next("/");
+          }
+        } else {
+          // Show loading page for 1 second before entering the component
+          setTimeout(() => {
+            next();
+          }, 1000);
+        }
+      },
     },
     {
       path: '/',
@@ -82,12 +91,19 @@ const router = createRouter({
       path: '/admin',
       name: 'LayoutAdmin',
       component: LayoutAdmin,
-      beforeEnter: guardMyroute,
+      meta:{
+        requiresAdmin: true,
+        requiresAdmin: true,
+      },
       children: [
         {
           path: '/admin',
           name: 'admin',
           component: admin,
+          meta:{
+            requiresAdmin: true,
+            requiresAdmin: true,
+          },  
         },
         {
           path: '/admin/tabel',
@@ -123,5 +139,26 @@ const router = createRouter({
     },
   ]
 });
+
+router.beforeEach(async (to, from, next) => {
+  const isAuthenticated = store.getters["auth/isAuthenticated"];
+  const role = localStorage.getItem("role");
+
+  if (to.meta.requiresLogin && !isAuthenticated) {
+    // Redirect to login page if login is required and user is not authenticated
+    next("/login");
+  } else if (to.meta.requiresAdmin && (!isAuthenticated || role !== "admin")) {
+    // Redirect to login page or home page if admin access is required but user is not authenticated or not an admin
+    next(isAuthenticated ? "/" : "/login");
+  } else if (to.meta.requiresUser && !isAuthenticated) {
+    // Redirect to home page if user access is required but user is not authenticated
+    next("/");
+  } else {
+    // Continue with navigation
+    next();
+  }
+});
+
+
 
 export default router;
